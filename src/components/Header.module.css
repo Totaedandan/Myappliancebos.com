@@ -1,0 +1,83 @@
+/* src/components/Header.module.css */
+.header {
+  background: var(--white);
+  padding: 15px 0;
+  border-bottom: 1px solid #E0E7FF; /* Более светлая рамка, как в дизайне */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Стили для логотипа */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+.logo img {
+  height: 50px; /* Задаем высоту логотипа */
+  width: auto;
+}
+.logo span {
+  font-size: 1.5rem;
+  font-weight: 900; /* Делаем текст жирным */
+  color: var(--text-dark); /* Черный цвет */
+}
+
+/* Стили для навигации */
+.nav {
+  display: flex;
+  gap: 30px;
+}
+.nav a {
+  text-decoration: none;
+  color: var(--text-dark); /* Черный цвет */
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent; /* Для эффекта при наведении */
+}
+.nav a:hover {
+  color: var(--primary-blue);
+}
+/* Стиль для активной ссылки */
+.nav a.activeLink {
+  color: var(--primary-blue);
+  border-bottom-color: var(--primary-blue);
+}
+
+/* Стили для кнопки с телефоном */
+.phoneBtn {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  padding: 12px 24px;
+  border-radius: 50px; /* Создаем овальную форму */
+  text-decoration: none;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+.phoneBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(41, 121, 255, 0.3);
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+  .phoneBtn {
+     font-size: 0.8rem;
+     padding: 8px 16px;
+  }
+}

@@ -1,0 +1,127 @@
+/* src/pages/BrandsPage.module.css */
+
+.brandsHero {
+    height: 500px;
+    background: 
+        linear-gradient(rgba(41, 121, 255, 0.85), rgba(41, 121, 255, 0.85)), 
+        url('https://static.wixstatic.com/media/nsplsh_9cf6b81e8892407fa2955122c118edb3~mv2.jpg/v1/fill/w_1920,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/nsplsh_9cf6b81e8892407fa2955122c118edb3~mv2.jpg') no-repeat center center/cover;
+}
+.brandsHeroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+.brandsHeroContent h1 {
+    font-family: "Georgia", serif;
+    font-weight: 500;
+}
+
+/* Стили для объединенной секции Expertise + Статистика */
+.expertiseGrid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Левая колонка шире */
+    gap: 4rem;
+    align-items: start;
+}
+
+.expertiseContent h3 {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+.expertiseContent p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.expertiseFeatures {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.featureItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.featureIconWrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.featureItem h4 {
+    color: var(--text-dark);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.featureItem p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Стили для сетки статистики (правая колонка) */
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.statCard {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.statCard strong {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--primary-blue);
+}
+
+.statCard span {
+    color: var(--text-secondary);
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .expertiseGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    /* --- ИЗМЕНЕНИЕ ЗДЕСЬ --- */
+    .statsGrid {
+        /* На мобильных устройствах статистика будет в 2 колонки */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    /* На очень маленьких экранах статистика будет в 1 колонку */
+    .statsGrid {
+        grid-template-columns: 1fr;
+    }
+}

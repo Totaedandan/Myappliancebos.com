@@ -1,0 +1,133 @@
+/* src/pages/AboutPage.module.css */
+
+/* Стили для Hero на странице About */
+.aboutHero {
+    height: 500px;
+}
+.aboutHero .heroOverlay {
+    background-color: rgba(41, 121, 255, 0.8); 
+}
+.aboutHeroContent {
+    text-align: center;
+}
+.aboutHeroContent h1, .aboutHeroContent p, .aboutHeroContent button {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Стили для секции Our Story */
+.ourStoryGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+.ourStoryText .section-title {
+    text-align: left;
+}
+.ourStoryText p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+.ourStoryImage img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* Стили для секции Core Values */
+.valuesSection {
+    background-color: var(--background-light-gray);
+}
+.valuesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.valueCard {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.valueIcon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: var(--background-light-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.04);
+    border: 1px solid var(--border-color);
+}
+.valueCard h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+.valueCard p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+/* Стили для секции Our Team */
+.teamGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+.teamImage img {
+    width: 100%;
+    border-radius: 12px;
+}
+.teamText p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+/* --- АДАПТИВНОСТЬ ДЛЯ СТРАНИЦЫ ABOUT --- */
+@media (max-width: 768px) {
+    .ourStoryGrid, .teamGrid {
+        grid-template-columns: 1fr;
+    }
+    .teamImage {
+        order: -1;
+        margin-bottom: 2rem;
+    }
+
+    /* --- ИЗМЕНЕНИЯ ЗДЕСЬ: ДЕЛАЕМ КАРУСЕЛЬ --- */
+    .valuesGrid {
+        display: flex; /* Меняем grid на flex */
+        overflow-x: auto; /* Включаем горизонтальную прокрутку */
+        scroll-snap-type: x mandatory; /* Добавляем "прилипание" при свайпе */
+        gap: 1rem;
+        padding: 1rem 0;
+        margin: 0 0; /* Чтобы карусель касалась краев */
+        /* Скрываем скроллбар */
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;  /* IE and Edge */
+    }
+    .valuesGrid::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, and Opera */
+    }
+
+    .valueCard {
+        flex: 0 0 80%; /* Каждая карточка занимает 80% ширины экрана */
+        scroll-snap-align: start; /* "Прилипаем" к началу карточки */
+    }
+    .valueCard:first-child {
+        margin-left: 15px; /* Отступ для первой карточки */
+    }
+    .valueCard:last-child {
+        margin-right: 15px; /* Отступ для последней карточки */
+    }
+    /* --- КОНЕЦ ИЗМЕНЕНИЙ --- */
+}

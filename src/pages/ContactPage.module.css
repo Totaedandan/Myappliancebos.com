@@ -1,0 +1,42 @@
+/* src/pages/ContactPage.module.css */
+
+/* Стили для Hero на странице Contact */
+.contactHero {
+    height: 400px;
+    background: 
+        linear-gradient(rgba(41, 121, 255, 0.8), rgba(41, 121, 255, 0.8)),
+        url('https://www.a14itservices.com/storage/2025/01/pawel-czerwinski-0xCCPIbl3M-unsplash-1140x641.jpg') no-repeat center center/cover;
+}
+
+.contactHeroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+
+.contactHeroContent h1 {
+    color: var(--text-light); 
+    font-size: 3rem;
+    font-family: "Georgia", serif;
+    font-weight: 500;
+}
+
+.contactHeroContent p {
+    color: rgba(255, 255, 255, 0.9); 
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+/* Стили для секции с картой */
+.mapSection {
+    padding: 0;
+    line-height: 0;
+}
+
+.mapImage {
+    width: 100%;
+    height: auto;
+}

@@ -1,0 +1,169 @@
+/* src/pages/ServiceAreasPage.module.css */
+
+/* Hero Section */
+.areasHero {
+    height: 500px;
+    background: 
+        linear-gradient(rgba(41, 121, 255, 0.9), rgba(41, 121, 255, 0.9)), 
+        url('https://consultasg.com/wp-content/uploads/2022/08/CBD-Chic-2.jpg') no-repeat center center/cover;
+}
+.areasHeroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+.areasHeroContent h1 {
+    font-family: "Georgia", serif;
+    font-weight: 500;
+}
+
+/* Map Section */
+.mapSection {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: var(--background-light-gray);
+}
+.mapImage {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* Cities Section */
+.citiesTitle {
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-bottom: 10px;
+}
+.citiesTitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 4px;
+    background-color: var(--primary-blue);
+    border-radius: 2px;
+}
+.citiesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.cityCard {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+.cityIcon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+}
+.cityCard h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+.cityCard p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+.cityTag {
+    background-color: var(--background-light-gray);
+    color: var(--text-secondary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    align-self: center;
+}
+
+/* Info Text Section */
+.infoSection {
+    background-color: var(--background-light-gray);
+}
+.infoContainer {
+    max-width: 800px;
+    margin: auto;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+.infoContainer p {
+    margin-bottom: 1.5rem;
+}
+
+/* CTA Section */
+.ctaSection {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    text-align: center;
+}
+.ctaSection h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+.ctaSection p {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    opacity: 0.9;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .citiesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    /* --- ИЗМЕНЕНИЯ ЗДЕСЬ: ДЕЛАЕМ КАРУСЕЛЬ --- */
+    .citiesGrid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+        padding: 1rem 0;
+        margin: 0 0; /* Чтобы карусель касалась краев */
+        grid-template-columns: none; /* Отключаем грид */
+        /* Скрываем скроллбар */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .citiesGrid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .cityCard {
+        flex: 0 0 80%; /* Каждая карточка занимает 80% ширины экрана */
+        scroll-snap-align: start;
+    }
+    .cityCard:first-child {
+        margin-left: 15px;
+    }
+    .cityCard:last-child {
+        margin-right: 15px;
+    }
+    /* --- КОНЕЦ ИЗМЕНЕНИЙ --- */
+}

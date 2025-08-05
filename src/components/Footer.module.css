@@ -1,0 +1,142 @@
+/* src/components/Footer.module.css */
+.footer {
+  background-color: #2c3e50; /* Меняем фон на правильный синий */
+  color: rgba(255, 255, 255, 0.8);
+  padding-top: 60px;
+}
+
+.blueTheme {
+  background-color: var(--primary-blue);
+}
+
+.footerContainer {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr; /* Задаем пропорции колонок */
+  gap: 2rem;
+  padding-bottom: 40px;
+}
+
+.footerColumn {
+  font-size: 0.9rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.logo img {
+  height: 70px; /* Задаем высоту логотипа */
+  width: auto;
+}
+
+.footerColumn p {
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.footerColumn h4 {
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+/* Декоративная линия под заголовками */
+.footerColumn h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 25px;
+  height: 3px;
+  background-color: var(--white);
+  opacity: 0.5;
+}
+
+.footerColumn ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footerColumn a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footerColumn a:hover {
+  color: var(--white);
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+/* Нижняя часть футера */
+.footerBottom {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1.25rem 0;
+  font-size: 0.85rem;
+}
+
+.footerBottom > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.footerLinks a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  position: relative;
+  padding: 0 1rem;
+}
+
+/* Разделители */
+.footerLinks a:not(:first-child)::before {
+    content: '|';
+    position: absolute;
+    left: 0;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Адаптивность для футера */
+@media (max-width: 992px) {
+    .footerContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .footerContainer {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footerColumn h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .contactItem, .logo {
+        justify-content: center;
+    }
+    .footerBottom > .container {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center; 
+    }
+}
