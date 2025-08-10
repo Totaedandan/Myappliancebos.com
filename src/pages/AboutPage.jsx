@@ -1,7 +1,7 @@
 // src/pages/AboutPage.jsx
-import React from 'react';
-import styles from './AboutPage.module.css'; // Новые стили для этой страницы
-import homePageStyles from '../pages/HomePage.module.css'; // Стили с HomePage для общих секций
+import React, { useEffect } from 'react'; // 1. Импортируем useEffect
+import styles from './AboutPage.module.css';
+import homePageStyles from '../pages/HomePage.module.css';
 
 // Импортируем наши ГОТОВЫЕ компоненты
 import BrandsSection from '../components/BrandsSection';
@@ -23,6 +23,34 @@ const coreValues = [
 ];
 
 const AboutPage = () => {
+  // 2. Добавляем ту же логику для загрузки скрипта и открытия виджета
+  useEffect(() => {
+    const scriptId = 'housecall-pro-script';
+    if (document.getElementById(scriptId)) return;
+
+    const script = document.createElement('script');
+    script.id = scriptId;
+    script.src = "https://online-booking.housecallpro.com/script.js?token=a255c4d3ed8e4a23950ac0aaeb98863a&orgName=KASSHomeServices";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      const existingScript = document.getElementById(scriptId);
+      if (existingScript) {
+        document.body.removeChild(existingScript);
+      }
+    };
+  }, []);
+
+  const openBookingModal = () => {
+    if (window.HCPWidget) {
+      window.HCPWidget.openModal();
+    } else {
+      console.error("Housecall Pro Widget is not loaded yet.");
+      alert("Booking service is loading, please try again in a moment.");
+    }
+  };
+
   return (
     <>
       {/* Hero Section для страницы About */}
@@ -31,7 +59,8 @@ const AboutPage = () => {
         <div className={`container ${homePageStyles.heroContent} ${styles.aboutHeroContent}`}>
           <h1>About Premier Appliance Repair</h1>
           <p>Your trusted partner for fast and reliable appliance repair in Boston. With over 10 years of experience, our team of certified technicians delivers high-quality repairs with genuine parts and excellent customer service.</p>
-          <button className={homePageStyles.heroBtn}>Schedule Service</button>
+          {/* 3. Привязываем открытие виджета к кнопке */}
+          <button className={homePageStyles.heroBtn} onClick={openBookingModal}>Schedule Service</button>
         </div>
       </section>
 
