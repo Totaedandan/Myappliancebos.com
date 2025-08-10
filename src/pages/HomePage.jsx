@@ -20,12 +20,12 @@ const IconThumb = () => <svg width="20" height="20" viewBox="0 0 24 24"><path fi
 
 // Данные для уникальных секций HomePage
 const appliances = [
-    { name: "Refrigerators", description: "Expert repair for all refrigerator types and brands with same-day service available for urgent cases.", img: "https://images.unsplash.com/photo-1616464916566-236ef485a349?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" },
-    { name: "Washers", description: "Front-load and top-load washer diagnostics and repair with genuine parts and 1-year warranty.", img: "https://images.unsplash.com/photo-1626806819282-2c1dc01a5e0c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" },
-    { name: "Dryers", description: "Gas and electric dryer troubleshooting and repair by certified technicians with 15+ years experience.", img: "https://images.unsplash.com/photo-1590212151007-3a1e048398de?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" },
-    { name: "Ovens & Ranges", description: "Gas and electric oven and stove repair services with transparent pricing and no hidden fees.", img: "https://images.unsplash.com/photo-1577862529714-a55d045b4278?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" },
-    { name: "Dishwashers", description: "Quiet, efficient dishwasher repair for all brands with leak detection and water efficiency optimization.", img: "https://images.unsplash.com/photo-1601412436009-d96440277a3b?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" },
-    { name: "Ice Makers", description: "Commercial and residential ice maker repair with emergency service and rapid response guarantee.", img: "https://images.unsplash.com/photo-1563223073-613e5a409559?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=600" }
+    { name: "Refrigerators", description: "Expert repair for all refrigerator types and brands with same-day service available for urgent cases.", img: "https://images.webfronts.com/cache/mejclffoeupy.jpg" },
+    { name: "Washers", description: "Front-load and top-load washer diagnostics and repair with genuine parts and 1-year warranty.", img: "https://image-us.samsung.com/SamsungUS/home/home-appliances/washers-dryers/dryers/gas/dvg45a6400v/gallery/DVE50A8500V_11_BrushedBlack_SCOM.jpg?$product-details-jpg$" },
+    { name: "Dryers", description: "Gas and electric dryer troubleshooting and repair by certified technicians with 15+ years experience.", img: "https://m.media-amazon.com/images/I/71SWgrMRRZL._UF350,350_QL50_.jpg" },
+    { name: "Ovens & Ranges", description: "Gas and electric oven and stove repair services with transparent pricing and no hidden fees.", img: "https://m.media-amazon.com/images/S/aplus-media/sc/a4fb3b94-195e-4db3-8017-b812aa86e99b.__CR346,294,2308,2308_PT0_SX300_V1___.jpg" },
+    { name: "Dishwashers", description: "Quiet, efficient dishwasher repair for all brands with leak detection and water efficiency optimization.", img: "https://mobileimages.lowes.com/productimages/e4e02284-04ae-4daa-9f5e-e002371c9c7d/71057142.jpeg?size=pdhism" },
+    { name: "Ice Makers", description: "Commercial and residential ice maker repair with emergency service and rapid response guarantee.", img: "https://5.imimg.com/data5/SELLER/Default/2021/9/RY/UR/QA/4533931/ice-cube-making-machine-500x500.jpg" }
 ];
 
 const features = [
