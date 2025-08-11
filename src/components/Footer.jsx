@@ -26,7 +26,7 @@ const Footer = ({ theme }) => {
           <p>Serving Greater Boston Area since 2010 with premium appliance repair services. We fix it right the first time with a satisfaction guarantee and industry-leading warranties on all repairs.</p>
           <div className={styles.contactItem}>
             <IconLocation />
-            <span>123 Service Road, Boston, MA 02108</span>
+            <span>71 Bryon rd, Chestnut Hill, MA 02467</span>
           </div>
         </div>
         
@@ -60,9 +60,9 @@ const Footer = ({ theme }) => {
         <div className={styles.footerColumn}>
           <h4>Contact Us</h4>
           <ul>
-            <li className={styles.contactItem}><IconPhone /><span>(617) 555-1234</span></li>
-            <li className={styles.contactItem}><IconEmail /><span>service@myappliancebos.com</span></li>
-            <li className={styles.contactItem}><IconClock /><span>Mon-Sat: 8:00 AM - 8:00 PM<br/>Sun: 9:00 AM - 5:00 PM</span></li>
+            <li className={styles.contactItem}><IconPhone /><span>+1 (603) 320-9578</span></li>
+            <li className={styles.contactItem}><IconEmail /><span>kasshomesvc@gmail.com</span></li>
+            <li className={styles.contactItem}><IconClock /><span>Mon-Sat: 8:00 AM - 4:00 PM<br/>Sun: 9:00 AM - 4:00 PM</span></li>
           </ul>
         </div>
       </div>
