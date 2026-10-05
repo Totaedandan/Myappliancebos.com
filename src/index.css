@@ -58,3 +58,27 @@ body {
   margin: 0 auto 3.5rem auto;
   line-height: 1.6;
 }
+/* Видимый фокус при навигации с клавиатуры */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--primary-blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Липкая шапка не должна перекрывать якорные секции */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}

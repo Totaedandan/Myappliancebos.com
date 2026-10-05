@@ -51,11 +51,11 @@ const ServiceAreasPage = () => {
           <h1>Appliance Repair Service Areas in Greater Boston</h1>
           <p>Fast, reliable appliance repair services across Greater Boston and surrounding areas.</p>
           <div className={homePageStyles.buttonGroup}>
-            <button className={homePageStyles.heroBtn} onClick={handleScrollToCities}>
+            <button type="button" className={homePageStyles.heroBtn} onClick={handleScrollToCities}>
               View Covered Cities
             </button>
             {/* Привязываем новую функцию к кнопке "Check Your Area" */}
-            <button className={`${homePageStyles.heroBtn} ${homePageStyles.ghostBtn}`} onClick={handleScrollToCta}>
+            <button type="button" className={`${homePageStyles.heroBtn} ${homePageStyles.ghostBtn}`} onClick={handleScrollToCta}>
               Check Your Area
             </button>
           </div>

@@ -1,11 +1,9 @@
 /* src/pages/ServiceAreasPage.module.css */
 
 /* Hero Section */
+/* Фон берётся из общего .hero (HomePage.module.css), чтобы все страницы выглядели одинаково */
 .areasHero {
     height: 500px;
-    background: 
-        linear-gradient(rgba(41, 121, 255, 0.9), rgba(41, 121, 255, 0.9)), 
-        url('https://consultasg.com/wp-content/uploads/2022/08/CBD-Chic-2.jpg') no-repeat center center/cover;
 }
 .areasHeroContent {
     display: flex;
@@ -15,9 +13,10 @@
     height: 100%;
     text-align: center;
 }
-.areasHeroContent h1 {
-    font-family: "Georgia", serif;
-    font-weight: 500;
+@media (max-width: 768px) {
+    .areasHero {
+        height: auto;
+    }
 }
 
 /* Map Section */

@@ -69,6 +69,8 @@
 .footerColumn a {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
+  display: inline-block;
+  padding: 4px 0; /* увеличенная зона нажатия на телефонах */
   transition: color 0.3s;
 }
 

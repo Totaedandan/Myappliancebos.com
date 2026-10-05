@@ -14,7 +14,7 @@ const ContactPage = () => {
       <section className={`${homePageStyles.hero} ${styles.contactHero}`}>
         <div className={`container ${homePageStyles.heroContent} ${styles.contactHeroContent}`}>
           <h1>Contact MyApplianceBos: Book Appliance Repair</h1>
-          <p>We're here to help. Reach out by phone, email, or fill out the form below.</p>
+          <p>We're here to help. Call, email, or book your repair online below.</p>
         </div>
       </section>
 

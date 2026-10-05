@@ -16,7 +16,7 @@ const IconInstagram = () => <svg width="24" height="24" viewBox="0 0 24 24"><pat
 
 const GetInTouchSection = () => {
     return (
-        <section className={`${styles.section}`}>
+        <section id="contact" className={styles.section}>
             <div className="container">
                 <h2 className="section-title">Schedule your Repair Today</h2>
                 <p className="section-subtitle">Get in touch to schedule a service appointment or ask any questions about our repair services.</p>

@@ -12,23 +12,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 
 /* Стили для логотипа */
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  flex-shrink: 0;
   text-decoration: none;
 }
 .logo img {
   height: 50px; /* Задаем высоту логотипа */
   width: auto;
-}
-.logo span {
-  font-size: 1.5rem;
-  font-weight: 900; /* Делаем текст жирным */
-  color: var(--text-dark); /* Черный цвет */
+  display: block;
 }
 
 /* Стили для навигации */
@@ -53,6 +50,18 @@
   border-bottom-color: var(--primary-blue);
 }
 
+/* Телефон внутри мобильного меню: на десктопе скрыт */
+.nav .mobileMenuPhone {
+  display: none;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
 /* Стили для кнопки с телефоном */
 .phoneBtn {
   background-color: var(--primary-blue);
@@ -61,6 +70,7 @@
   border-radius: 50px; /* Создаем овальную форму */
   text-decoration: none;
   font-weight: 700;
+  white-space: nowrap;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -71,13 +81,101 @@
   box-shadow: 0 4px 15px rgba(41, 121, 255, 0.3);
 }
 
-/* Адаптивность для мобильных */
-@media (max-width: 768px) {
+/* Кнопка-гамбургер (только на мобильных) */
+.menuToggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--white);
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.menuToggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--text-dark);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.menuToggleOpen span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menuToggleOpen span:nth-child(2) { opacity: 0; }
+.menuToggleOpen span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Планшеты: уплотняем шапку, чтобы всё помещалось в одну строку */
+@media (max-width: 1100px) {
   .nav {
-    display: none;
+    gap: 20px;
   }
   .phoneBtn {
-     font-size: 0.8rem;
-     padding: 8px 16px;
+    padding: 10px 18px;
+  }
+}
+
+/* Мобильные: меню прячется за гамбургер, телефон — круглая кнопка */
+@media (max-width: 900px) {
+  .header {
+    padding: 10px 0;
+  }
+  .logo img {
+    height: 38px;
+  }
+  .menuToggle {
+    display: flex;
+  }
+  .phoneBtn {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    justify-content: center;
+  }
+  .phoneText {
+    display: none;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 12px 24px rgba(13, 26, 59, 0.12);
+    padding: 0.5rem 15px 1rem;
+  }
+  .navOpen {
+    display: flex;
+  }
+  .nav a {
+    padding: 14px 4px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1.05rem;
+  }
+  .nav a.activeLink {
+    border-bottom-color: var(--border-color);
+  }
+  .nav .mobileMenuPhone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    font-weight: 700;
+  }
+  .nav .mobileMenuPhone:hover {
+    color: var(--white);
   }
 }

@@ -12,7 +12,7 @@ const ReadySection = () => {
       <div className="container">
         <h2>Ready to Repair Your Appliance?</h2>
         <p>Don't let a broken appliance disrupt your life. Contact us today for fast, reliable service you can trust.</p>
-        <button className={styles.heroBtn} onClick={openBookingModal}>
+        <button type="button" className={styles.heroBtn} onClick={openBookingModal}>
           Schedule Service Now
         </button>
       </div>

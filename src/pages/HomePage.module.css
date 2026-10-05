@@ -52,6 +52,8 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  text-decoration: none;
+  white-space: nowrap;
 }
 .heroBtn:hover {
   transform: translateY(-3px);
@@ -249,6 +251,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
+  /* Без этого открытый вопрос растягивал соседнюю карточку в ряду, и она выглядела открытой */
+  align-items: start;
 }
 .faqItem {
   background-color: var(--white);
@@ -278,6 +282,12 @@
   border-right: 2px solid var(--primary-blue);
   transform: rotate(45deg);
   transition: transform 0.3s ease;
+}
+.faqQuestion::-webkit-details-marker {
+  display: none;
+}
+.faqItem[open] {
+  border-color: var(--primary-blue);
 }
 .faqItem[open] > .faqQuestion::after {
   transform: rotate(225deg);
@@ -643,6 +653,18 @@
   .reviewCard {
     width: 300px;
     flex-shrink: 0;
+  }
+  /* Пользователям с настройкой "уменьшить движение" показываем обычную прокрутку */
+  @media (prefers-reduced-motion: reduce) {
+    .reviewsCarouselWrapper {
+      overflow-x: auto;
+    }
+    .reviewsGrid {
+      animation: none;
+    }
+    .isClone {
+      display: none !important;
+    }
   }
   /* Показываем дубликаты для анимации карусели */
   .isClone {

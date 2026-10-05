@@ -33,7 +33,7 @@ const AboutPage = () => {
           <h1>About MyApplianceBos: Local Appliance Repair in Boston</h1>
           <p>Your trusted partner for fast and reliable appliance repair in Boston. With over 10 years of experience, our team of certified technicians delivers high-quality repairs with genuine parts and excellent customer service.</p>
           {/* 3. Привязываем открытие виджета к кнопке */}
-          <button className={homePageStyles.heroBtn} onClick={openBookingModal}>Schedule Service</button>
+          <button type="button" className={homePageStyles.heroBtn} onClick={openBookingModal}>Schedule Service</button>
         </div>
       </section>
 
