@@ -4,6 +4,7 @@ import styles from './ServiceAreasPage.module.css';
 import homePageStyles from '../pages/HomePage.module.css';
 
 import mapImage from '../assets/map_service.png';
+import { SITE } from '../config/site.js';
 
 // Иконки
 const IconBuilding = () => <svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"/></svg>;
@@ -47,7 +48,7 @@ const ServiceAreasPage = () => {
       {/* Hero Section */}
       <section className={`${homePageStyles.hero} ${styles.areasHero}`}>
         <div className={`container ${homePageStyles.heroContent} ${styles.areasHeroContent}`}>
-          <h1>Our Service Areas in Boston & Beyond</h1>
+          <h1>Appliance Repair Service Areas in Greater Boston</h1>
           <p>Fast, reliable appliance repair services across Greater Boston and surrounding areas.</p>
           <div className={homePageStyles.buttonGroup}>
             <button className={homePageStyles.heroBtn} onClick={handleScrollToCities}>
@@ -64,7 +65,7 @@ const ServiceAreasPage = () => {
       {/* Map Section */}
       <section className={`${homePageStyles.section} ${styles.mapSection}`}>
         <div className="container">
-          <img src={mapImage} alt="Map of our service areas" className={styles.mapImage} />
+          <img src={mapImage} alt="Map of MyApplianceBos service areas across Greater Boston" className={styles.mapImage} loading="lazy" />
         </div>
       </section>
 
@@ -90,8 +91,8 @@ const ServiceAreasPage = () => {
       <section className={`${homePageStyles.section} ${styles.infoSection}`}>
         <div className={styles.infoContainer}>
             <p>We're proud to provide same-day appliance repair services throughout Boston and neighboring communities. Our service area covers a 15-mile radius from downtown Boston, ensuring that residents throughout Greater Boston have access to reliable, professional appliance repair.</p>
-            <p>Our technicians live and work in the communities we serve, allowing us to respond quickly to service calls throughout our coverage area. Whether you're in historic Beacon Hill or the residential neighborhoods of Newton, you can count on Premier Appliance Repair for fast, dependable service.</p>
-            <p>Not sure if we service your specific neighborhood? Give us a call at (555) 123-4567 and we'll confirm immediately if you're within our service area. We're constantly expanding our coverage to serve more communities in the Boston metropolitan area.</p>
+            <p>Our technicians live and work in the communities we serve, allowing us to respond quickly to service calls throughout our coverage area. Whether you're in historic Beacon Hill or the residential neighborhoods of Newton, you can count on MyApplianceBos for fast, dependable service.</p>
+            <p>Not sure if we service your specific neighborhood? Give us a call at {SITE.phone} and we'll confirm immediately if you're within our service area. We're constantly expanding our coverage to serve more communities in the Boston metropolitan area.</p>
         </div>
       </section>
 
@@ -101,11 +102,11 @@ const ServiceAreasPage = () => {
           <h2>Not sure if we service your area?</h2>
           <p>Call us now and we'll confirm immediately - plus answer any questions about our appliance repair services.</p>
           <div className={homePageStyles.buttonGroup} style={{justifyContent: 'center'}}>
-            <a href="tel:+16033209578" className={homePageStyles.heroBtn}>
+            <a href={SITE.phoneHref} className={homePageStyles.heroBtn}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <span>+1 (603) 320-9578</span>
+              <span>{SITE.phone}</span>
             </a>
-            <a href="mailto:kasshomesvc@gmail.com" className={`${homePageStyles.heroBtn} ${homePageStyles.ghostBtn}`}>Email Us</a>
+            <a href={`mailto:${SITE.email}`} className={`${homePageStyles.heroBtn} ${homePageStyles.ghostBtn}`}>Email Us</a>
           </div>
         </div>
       </section>

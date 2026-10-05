@@ -1,5 +1,6 @@
 // src/pages/BrandsPage.jsx
-import React, { useEffect } from 'react'; // 1. Импортируем useEffect
+import React from 'react';
+import { useBookingWidget } from '../hooks/useBookingWidget';
 import styles from './BrandsPage.module.css';
 import homePageStyles from '../pages/HomePage.module.css';
 
@@ -12,40 +13,14 @@ const IconParts = () => <svg width="24" height="24" viewBox="0 0 24 24"><path fi
 const IconTools = () => <svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M14.19,7.41L12,5.22L9.81,7.41L8.4,6L12,2.41L15.6,6L14.19,7.41M12,21.59L8.4,18L9.81,16.59L12,18.78L14.19,16.59L15.6,18L12,21.59M18,9.81L16.59,8.4L18.78,6.22L16.59,4L18,2.59L21.59,6.22L18,9.81M6,9.81L2.41,6.22L6,2.59L7.41,4L5.22,6.22L7.41,8.4L6,9.81M19.78,14.19L18,12L16.59,13.41L18.78,15.6L16.59,17.79L18,19.21L21.59,15.6L19.78,14.19M7.41,15.6L5.22,17.79L7.41,19.21L6,20.62L2.41,17L6,13.41L7.41,14.82L5.22,17L7.41,15.6Z"></path></svg>;
 
 const BrandsPage = () => {
-  // 2. Добавляем ту же логику для загрузки скрипта и открытия виджета
-  useEffect(() => {
-    const scriptId = 'housecall-pro-script';
-    if (document.getElementById(scriptId)) return;
-
-    const script = document.createElement('script');
-    script.id = scriptId;
-    script.src = "https://online-booking.housecallpro.com/script.js?token=a255c4d3ed8e4a23950ac0aaeb98863a&orgName=KASSHomeServices";
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      const existingScript = document.getElementById(scriptId);
-      if (existingScript) {
-        document.body.removeChild(existingScript);
-      }
-    };
-  }, []);
-
-  const openBookingModal = () => {
-    if (window.HCPWidget) {
-      window.HCPWidget.openModal();
-    } else {
-      console.error("Housecall Pro Widget is not loaded yet.");
-      alert("Booking service is loading, please try again in a moment.");
-    }
-  };
+  const openBookingModal = useBookingWidget();
 
   return (
     <>
       {/* Hero Section для страницы Brands */}
       <section className={`${homePageStyles.hero} ${styles.brandsHero}`}>
         <div className={`container ${homePageStyles.heroContent} ${styles.brandsHeroContent}`}>
-          <h1>We Repair All Major Appliance Brands</h1>
+          <h1>Appliance Repair for All Major Brands in Boston</h1>
           <p>From Sub-Zero to Samsung — we've got you covered. Our technicians are certified to service all major kitchen and laundry appliance brands.</p>
           <div className={homePageStyles.buttonGroup}>
             {/* 3. Привязываем открытие виджета к кнопке */}
@@ -67,7 +42,7 @@ const BrandsPage = () => {
       <section className={homePageStyles.section}>
         <div className="container">
           <h2 className="section-title">Our Brand Expertise</h2>
-          <p className="section-subtitle">Why choose Premier for your brand-specific appliance repairs</p>
+          <p className="section-subtitle">Why choose MyApplianceBos for your brand-specific appliance repairs</p>
 
           <div className={styles.expertiseGrid}>
             {/* Левая колонка */}

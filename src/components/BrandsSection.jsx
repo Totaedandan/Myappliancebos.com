@@ -17,8 +17,8 @@ const BrandsSection = ({
         <h2 className={`${"section-title"} ${styles.brandsTitle}`}>{title}</h2>
         <p className="section-subtitle">{subtitle}</p>
         <div className={styles.brandsGrid}>
-          <img src={brandsImage1} alt="Samsung, Kenmore, LG and other brands" />
-          <img src={brandsImage2} alt="GE, Thermador, Panasonic and other brands" />
+          <img src={brandsImage1} alt="Samsung, Kenmore, LG and other appliance brands we repair" loading="lazy" />
+          <img src={brandsImage2} alt="GE, Thermador, Panasonic and other appliance brands we repair" loading="lazy" />
         </div>
       </div>
     </section>

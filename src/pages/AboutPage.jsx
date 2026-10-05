@@ -1,5 +1,6 @@
 // src/pages/AboutPage.jsx
-import React, { useEffect } from 'react'; // 1. Импортируем useEffect
+import React from 'react';
+import { useBookingWidget } from '../hooks/useBookingWidget';
 import styles from './AboutPage.module.css';
 import homePageStyles from '../pages/HomePage.module.css';
 
@@ -18,38 +19,10 @@ const coreValues = [
   { icon: <IconReliability />, title: "Reliability", description: "Same-day service, upfront pricing, and genuine parts. We do what we say we'll do, every time." },
   { icon: <IconSpeed />, title: "Speed", description: "Most repairs completed in under 2 hours. We know your time is valuable and your appliance is essential." },
   { icon: <IconQuality />, title: "Quality", description: "Factory-certified technicians using manufacturer-approved parts. We stand behind our work with a 2-year warranty." },
-  { icon: <IconProfessionalism />, title: "Professionalism", description: "Uniformed technicians, on-time arrivals, and respectful service. We treat your home like our own." },
-  { icon: <IconReliability />, title: "Reliability", description: "Same-day service, upfront pricing, and genuine parts. We do what we say we'll do, every time." },
 ];
 
 const AboutPage = () => {
-  // 2. Добавляем ту же логику для загрузки скрипта и открытия виджета
-  useEffect(() => {
-    const scriptId = 'housecall-pro-script';
-    if (document.getElementById(scriptId)) return;
-
-    const script = document.createElement('script');
-    script.id = scriptId;
-    script.src = "https://online-booking.housecallpro.com/script.js?token=a255c4d3ed8e4a23950ac0aaeb98863a&orgName=KASSHomeServices";
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      const existingScript = document.getElementById(scriptId);
-      if (existingScript) {
-        document.body.removeChild(existingScript);
-      }
-    };
-  }, []);
-
-  const openBookingModal = () => {
-    if (window.HCPWidget) {
-      window.HCPWidget.openModal();
-    } else {
-      console.error("Housecall Pro Widget is not loaded yet.");
-      alert("Booking service is loading, please try again in a moment.");
-    }
-  };
+  const openBookingModal = useBookingWidget();
 
   return (
     <>
@@ -57,7 +30,7 @@ const AboutPage = () => {
       <section className={`${homePageStyles.hero} ${styles.aboutHero}`}>
         <div className={homePageStyles.heroOverlay}></div>
         <div className={`container ${homePageStyles.heroContent} ${styles.aboutHeroContent}`}>
-          <h1>About Premier Appliance Repair</h1>
+          <h1>About MyApplianceBos: Local Appliance Repair in Boston</h1>
           <p>Your trusted partner for fast and reliable appliance repair in Boston. With over 10 years of experience, our team of certified technicians delivers high-quality repairs with genuine parts and excellent customer service.</p>
           {/* 3. Привязываем открытие виджета к кнопке */}
           <button className={homePageStyles.heroBtn} onClick={openBookingModal}>Schedule Service</button>
@@ -69,11 +42,11 @@ const AboutPage = () => {
         <div className={`container ${styles.ourStoryGrid}`}>
             <div className={styles.ourStoryText}>
                 <h2 className="section-title" style={{textAlign: 'left', marginLeft: 0}}>Our Story</h2>
-                <p>Founded in 2013, Premier Appliance Repair began with a simple mission: to provide Boston homeowners with appliance repair services they could truly rely on. What started as a one-man operation has grown into a team of certified technicians serving the entire metropolitan area.</p>
+                <p>MyApplianceBos (KASS Home Services) began with a simple mission: to provide Boston homeowners with appliance repair services they could truly rely on. What started as a one-man operation has grown into a team of certified technicians serving the entire metropolitan area.</p>
                 <p>Over the past decade, we've repaired over 15,000 appliances, developing specialized expertise across all major brands. We pride ourselves on our transparent pricing, same-day service for most repairs, and the industry-leading 2-year warranty that comes with every repair.</p>
             </div>
             <div className={styles.ourStoryImage}>
-                <img src="https://images.unsplash.com/photo-1579625481717-2c5253164969?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800" alt="Appliance technician working"/>
+                <img src="https://images.unsplash.com/photo-1579625481717-2c5253164969?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800" alt="Appliance technician repairing a kitchen appliance" loading="lazy" width="800" height="533" />
             </div>
         </div>
       </section>
@@ -99,12 +72,12 @@ const AboutPage = () => {
        <section className={homePageStyles.section}>
         <div className={`container ${styles.teamGrid}`}>
           <div className={styles.teamImage}>
-            <img src="https://images.unsplash.com/photo-1556742059-43936a8a2357?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800" alt="Our expert team"/>
+            <img src="https://images.unsplash.com/photo-1556742059-43936a8a2357?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800" alt="MyApplianceBos repair team" loading="lazy" width="800" height="533" />
           </div>
           <div className={styles.teamText}>
             <h2 className="section-title" style={{textAlign: 'left', marginLeft: 0}}>Our Expert Team</h2>
             <p>We're currently preparing professional photos of our skilled technicians who take pride in every repair. Each member of our team is a certified, experienced, and friendly professional dedicated to providing you with the best service possible.</p>
-            <p>Check back soon to meet the faces behind Premier Appliance Repair!</p>
+            <p>Check back soon to meet the faces behind MyApplianceBos!</p>
           </div>
         </div>
        </section>

@@ -5,6 +5,7 @@ import homePageStyles from '../pages/HomePage.module.css'; // Стили с Home
 
 // Импортируем наш ГОТОВЫЙ компонент
 import GetInTouchSection from '../components/GetInTouchSection';
+import mapImage from '../assets/map_service.png';
 
 const ContactPage = () => {
   return (
@@ -12,7 +13,7 @@ const ContactPage = () => {
       {/* Hero Section для страницы Contact */}
       <section className={`${homePageStyles.hero} ${styles.contactHero}`}>
         <div className={`container ${homePageStyles.heroContent} ${styles.contactHeroContent}`}>
-          <h1>Contact MyApplianceBOS</h1>
+          <h1>Contact MyApplianceBos: Book Appliance Repair</h1>
           <p>We're here to help. Reach out by phone, email, or fill out the form below.</p>
         </div>
       </section>
@@ -24,8 +25,9 @@ const ContactPage = () => {
       <section className={styles.mapSection}>
         {/* Для этой карты можно использовать статичное изображение или встроить интерактивную карту */}
         <img 
-          src="https://i.stack.imgur.com/g2V2g.png" 
-          alt="Map of Boston service area" 
+          src={mapImage}
+          alt="Map of the Greater Boston area we serve"
+          loading="lazy" 
           className={styles.mapImage}
         />
       </section>

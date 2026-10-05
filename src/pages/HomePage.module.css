@@ -291,8 +291,8 @@
 /* Reviews Section */
 .reviewsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
 }
 .reviewCard {
   background-color: var(--white);
@@ -313,7 +313,14 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  object-fit: cover;
+  background-color: var(--primary-blue);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 .authorInfo strong {
   font-weight: 700;
@@ -455,6 +462,13 @@
 .contactDetails span {
     color: var(--text-secondary);
     font-size: 0.9rem;
+}
+.contactDetails span a {
+    color: inherit;
+    text-decoration: none;
+}
+.contactDetails span a:hover {
+    color: var(--primary-blue);
 }
 .contactForm {
     background-color: var(--white);
@@ -617,7 +631,8 @@
   }
   .reviewsGrid {
     display: flex;
-    width: calc(300px * 12); 
+    width: max-content;
+    padding-right: 1rem;
     animation: scroll 60s linear infinite;
     gap: 1rem;
     grid-template-columns: none; /* Отключаем грид на мобильных */

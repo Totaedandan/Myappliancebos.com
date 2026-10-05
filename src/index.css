@@ -1,5 +1,5 @@
 /* src/index.css */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+/* Шрифт Roboto подключается в index.html через <link> (быстрее, чем @import) */
 
 /* CSS-переменные из вашего дизайна */
 :root {
